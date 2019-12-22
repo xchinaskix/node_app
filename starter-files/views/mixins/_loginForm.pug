@@ -1,0 +1,7 @@
+mixin loginForm(store = {})
+  form(action='/login' method='POST' class='card')
+    label(for='email') Email
+    input(type='email' name='email')
+    label(for='name') Name
+    input(type='text' name='name')
+    input(type='submit' value='Save' class='button')
