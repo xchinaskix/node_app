@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const storeController = require('../controllers/storeController');
 const userController = require('../controllers/userController');
+const authController = require('../controllers/authController');
 const { catchErrors } = require('../handlers/errorHandlers');
 
 // Do work here
@@ -28,7 +29,7 @@ router.get('/login', userController.login);
 
 router.get('/register', userController.register);
 router.post('/register', userController.validateRegister,
-userController.registration);
+userController.registration, authController.login);
 
 
 module.exports = router;
