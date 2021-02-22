@@ -1,5 +1,5 @@
 mixin registerForm(store = {})
-  form(action='/register' method='POST' class='card')
+  form.form(action='/register' method='POST' class='card')
     label(for='email') Email
     input(type='email' name='email' required)
     label(for='name') Name

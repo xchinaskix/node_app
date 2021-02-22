@@ -18,7 +18,9 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: 'Please supply a name',
     trim: true
-  }
+  },
+  resetPasswordToken: String,
+  resetPasswordExpired: Date
 });
 
 userSchema.virtual('gravatar').get(function() {

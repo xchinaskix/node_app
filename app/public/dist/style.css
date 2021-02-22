@@ -446,7 +446,7 @@ body {
   color: #303030; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-size: 5rem;
+  font-size: 2rem;
   font-family: 'Panama';
   font-weight: 600;
   letter-spacing: -1px; }
@@ -1117,8 +1117,9 @@ label {
 
 .card {
   background: white;
-  padding: 5rem;
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15); }
+  padding: 3rem;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15);
+  margin: 2rem; }
 
 pre.error {
   padding: 5rem;
