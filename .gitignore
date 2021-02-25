@@ -8,3 +8,4 @@ variables.env.now
 /starter-files
 /stepped-solutions
 .env
+app/public/uploads
