@@ -45,6 +45,10 @@ storeShema.index({
     description: 'text'
 });
 
+storeShema.index({
+    location: '2dsphere'
+});
+
 storeShema.pre('save', async function(next) {
     if(!this.isModified('name')) {
         next();
