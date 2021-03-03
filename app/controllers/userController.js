@@ -54,3 +54,22 @@ exports.updateAccount = async (req, res) => {
   req.flash('success', 'Account was successfully updated');
   res.redirect('back');
 }
+
+exports.addLikeStore = async (req, res) => {
+  console.log(req.params.id);
+  const storeId = req.params.id;
+  const user = await User.findOneAndUpdate(
+    { _id: req.user._id},
+    { $push: {liked: storeId} },
+    { new: true, runValidators: true, context: 'query' }
+  );
+
+  req.flash('success', 'Store was liked');
+  res.redirect(`/hearts`);
+}
+
+exports.getHearts = async (req, res) => {
+  const user = await User.findOne({ _id: req.user._id}).populate('liked');
+
+  res.render('store', {title: 'Store', stores: user.liked});
+}

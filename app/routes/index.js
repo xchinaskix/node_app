@@ -45,6 +45,12 @@ router.get('/map', storeController.mapPage);
 router.get('/api/search', catchErrors(storeController.search));
 router.get('/api/stores/near', catchErrors(storeController.mapStores));
 
+router.get('/liked/:id', catchErrors(userController.addLikeStore));
+
+// user way to get hearts
+// router.get('/hearts', authController.isLoggedIn, catchErrors(userController.getHearts));
+// store way to get hearts
+router.get('/hearts', authController.isLoggedIn, catchErrors(storeController.getHearts));
 
 
 module.exports = router;

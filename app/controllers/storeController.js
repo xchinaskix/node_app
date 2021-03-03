@@ -61,7 +61,6 @@ exports.editStore = async (req, res) => {
 }
 
 exports.updateStore = async (req, res) => {
-    console.log(req.body);
     req.body.location.type = 'Point';
     const store = await Store.findOneAndUpdate({_id: req.params.id}, req.body, {
         new: true,
@@ -110,3 +109,10 @@ exports.mapStores = async (req, res) => {
 exports.mapPage = (req, res) => {
     res.render('map', {title: 'Map page'})
 }
+
+exports.getHearts = async (req, res) => {
+    const stores = await Store.find({
+         _id: { $in: req.user.liked}});
+  
+    res.render('store', {title: 'Store', stores});
+  }
