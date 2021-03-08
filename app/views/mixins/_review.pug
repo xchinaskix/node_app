@@ -6,6 +6,6 @@ mixin review(review)
     .review__stars(title=`Rated ${review.rating} our of 5 stars`)
       = '★'.repeat(review.rating)
       = '☆'.repeat(5 - review.rating)
-    time.review__time(datetime = review.created)= h.moment(review.created).fromNow()
+    time.review__time(datetime = review.date)= h.moment(review.date).fromNow()
   .review__body 
     p= review.text
