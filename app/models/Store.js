@@ -71,4 +71,10 @@ storeShema.statics.getTagList = function() {
     ]);
 }
 
+storeShema.virtual('reviews', {
+    ref: 'Review',
+    localField: '_id',
+    foreignField: 'store'
+});
+
 module.exports = mongoose.model('Store', storeShema);
