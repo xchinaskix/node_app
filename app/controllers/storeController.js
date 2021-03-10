@@ -115,4 +115,11 @@ exports.getHearts = async (req, res) => {
          _id: { $in: req.user.liked}});
   
     res.render('store', {title: 'Store', stores});
-  }
+}
+
+exports.getTopStores = async (req, res) => {
+    const stores = await Store.getTopStores();
+    // res.json(stores);
+  
+    res.render('top', {title: 'Top 10 Stores', stores});
+}

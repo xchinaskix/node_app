@@ -42,18 +42,20 @@ router.get('/account/reset/:token', catchErrors(authController.reset));
 router.post('/account/reset/:token', authController.confirmedPasswords, catchErrors(authController.update));
 router.get('/map', storeController.mapPage);
 
-
-router.get('/api/search', catchErrors(storeController.search));
-router.get('/api/stores/near', catchErrors(storeController.mapStores));
-
 router.get('/liked/:id', catchErrors(userController.addLikeStore));
-
 // user way to get hearts
 // router.get('/hearts', authController.isLoggedIn, catchErrors(userController.getHearts));
 // store way to get hearts
 router.get('/hearts', authController.isLoggedIn, catchErrors(storeController.getHearts));
-
 router.post('/review/:id', authController.isLoggedIn, catchErrors(reviewController.addReview))
+
+// api
+router.get('/api/search', catchErrors(storeController.search));
+router.get('/api/stores/near', catchErrors(storeController.mapStores));
+
+router.get('/top', catchErrors(storeController.getTopStores));
+
+
 
 
 module.exports = router;
