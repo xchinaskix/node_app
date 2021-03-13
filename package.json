@@ -6,9 +6,9 @@
     "node": ">= 7.6.0"
   },
   "scripts": {
-    "prod": "node ./app/start.js",
+    "start": "node ./app/start.js",
     "watch": "nodemon ./app/start.js --ignore public/",
-    "start": "concurrently \"npm run watch\" \"npm run assets\" --names \"💻,📦\" --prefix name",
+    "dev": "concurrently \"npm run watch\" \"npm run assets\" --names \"💻,📦\" --prefix name",
     "assets": "webpack -w --display-max-modules 0",
     "sample": "node ./app/data/load-sample-data.js",
     "blowitallaway": "node ./app/data/load-sample-data.js --delete",
