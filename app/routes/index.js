@@ -21,6 +21,7 @@ catchErrors(storeController.updateStore));
 
 router.get('/store/:slug', catchErrors(storeController.getStoreBySlug));
 router.get('/stores', catchErrors(storeController.getStore));
+router.get('/stores/page/:page', catchErrors(storeController.getStore));
 router.get('/stores/:id/edit', catchErrors(storeController.editStore));
 
 router.get('/tags', catchErrors(storeController.getStoreByTags));
